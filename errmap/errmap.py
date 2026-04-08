@@ -9,7 +9,13 @@ class ErrMap:
         self.vertical = " │   "
         self.active = True
         self._errors = []
-        self._filepath = filepath
+        try :
+            if filepath == None:
+                self._filepath = '.'.join(__file__.replace('\\','/').split('/')[-1].split('.')[:-1])+'.json'
+            else :
+                self.filepath = filepath
+        except Exception:
+            self.filepath = filepath
 
     def _build_json_data(self, etype, value, frames):
         """Convert error to JSON-serializable dict. Frames are pre-extracted by caller."""

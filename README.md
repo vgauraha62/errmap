@@ -66,7 +66,8 @@ errmap.active = True   # tree formatter
 errmap.save_to_json("error.json")
 ```
 
-The JSON file contains the error type, message, and complete call tree.
+The JSON file contains the error type, message, and complete call tree.  
+By default, the save file will have the same name as the code file. 
 
 ---
 
